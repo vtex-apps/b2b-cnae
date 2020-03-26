@@ -1,0 +1,61 @@
+{
+  "name": "b2b-cnae",
+  "vendor": "vtex",
+  "version": "0.0.1",
+  "title": "CNAE App",
+  "description": "",
+  "mustUpdateAt": "2022-08-28",
+  "scripts": {
+    "postreleasy": "vtex publish"
+  },
+  "dependencies": {
+    "vtex.styleguide": "9.x"
+  },
+  "policies": [
+    {
+      "name": "vbase-read-write"
+    },
+    {
+      "name": "update-app-settings"
+    }
+  ],
+  "builders": {
+    "react": "3.x",
+    "graphql": "1.x",
+    "node": "4.x",
+    "messages": "1.x",
+    "admin": "0.x"
+  },
+  "settingsSchema": {
+    "title": "CNAE Configuration",
+    "type": "object",
+    "properties": {
+      "login": {
+        "type": "string",
+        "title": "SERPRO Login",
+        "description": "Your login for the SERPRO service"
+      },
+      "password": {
+        "type": "string",
+        "title": "SERPRO Password",
+        "description": "Your password for the SERPRO service"
+      },
+      "mandatoryForCompany": {
+        "type": "boolean",
+        "title": "Is Mandatory for companies?",
+        "description": "Select if CNAE information is mandatory for companies"
+      },
+      "beginOfAcceptedRange": {
+        "type": "string",
+        "title": "Begin of accepted CNAE range",
+        "description": "Begin of accepted CNAE range"
+      },
+      "tradePolicyId": {
+        "type": "string",
+        "title": "Trade policy id",
+        "description": "Id of the trade policy to be aplied to the customers"
+      }
+    }
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

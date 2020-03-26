@@ -1,0 +1,10 @@
+{
+  "b2b-cnae.layout.title": "Validação de CNAE",
+  "b2b-cnae.layout.configuration-title": "Para utilizar a validação automática de CNAE na sua loja, é preciso informar seu login e senha da SERPRO",
+  "b2b-cnae.layout.configuration-submit": "Salvar",
+  "b2b-cnae.layout.configuration-login": "AppKey do serviço SEPRO",
+  "b2b-cnae.layout.configuration-password": "AppToken do serviço SERPRO",
+  "b2b-cnae.layout.configuration-isMandatory": "Obrigatório para Pessoa Juridica",
+  "b2b-cnae.layout.configuration-beginRange": "Inicio de CNAEs aceitos",
+  "b2b-cnae.layout.configuration-tradePolicy": "Id da politica comercial para CNAE aceito"
+}

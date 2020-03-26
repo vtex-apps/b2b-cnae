@@ -1,0 +1,27 @@
+{
+  "name": "vtex.b2b-cnae",
+  "version": "0.0.1",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^11.12.1",
+    "@types/react": "^16.8.10",
+    "@types/react-intl": "^2.3.17",
+    "apollo-client": "^2.4.7",
+    "graphql": "^14.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-intl": "^2.7.2",
+    "tslint": "^5.14.0",
+    "typescript": "3.8.3",
+    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.97.1/public/@types/vtex.render-runtime",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.26/public/@types/vtex.styleguide"
+  },
+  "dependencies": {
+    "@types/faker": "^4.1.5",
+    "faker": "^4.1.0",
+    "react-apollo": "^3.1.3"
+  }
+}

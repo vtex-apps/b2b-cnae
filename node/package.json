@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@vtex/api": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "8.x",
+    "@vtex/api": "^3.0.0",
+    "typescript": "3.8.3",
+    "vtex.b2b-cnae": "https://everton--c2v01.myvtex.com/_v/private/typings/linked/v1/vtex.b2b-cnae@0.0.1+build1585188458/public/@types/vtex.b2b-cnae",
+    "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.26/public/@types/vtex.styleguide"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "admin.cnae": {
+    "component": "Configuration",
+    "path": "/admin/app/cnae"
+  }
+}

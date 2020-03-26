@@ -1,0 +1,26 @@
+type Query {
+  getSettings: SettingsResponse @cacheControl(scope: PUBLIC, maxAge: MEDIUM)
+  getConfig: GetConfigResponse @cacheControl(scope: PUBLIC, maxAge: MEDIUM)
+  postSettings(settings: Settings): Boolean
+}
+
+input Settings {
+  login: String
+  password: String
+  isMandatoryForCompany: Boolean
+  startOfAcceptedRange: String
+  tradePolicyId: String
+}
+
+type SettingsResponse {
+  login: String
+  password: String
+  isMandatoryForCompany: Boolean
+  startOfAcceptedRange: String
+  tradePolicyId: String
+}
+
+type GetConfigResponse {
+  storeKey: String
+  apiUser: String
+}
