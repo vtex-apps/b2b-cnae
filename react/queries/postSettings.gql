@@ -1,3 +1,5 @@
 query postSettings($settings: Settings){
-  postSettings(settings:$settings)
+  postSettings(settings:$settings){
+    status
+  }
 }

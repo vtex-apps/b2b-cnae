@@ -1,3 +1,9 @@
 import { IOClients } from '@vtex/api'
 
-export class Clients extends IOClients {}
+import { Serpro } from './serpro'
+
+export class Clients extends IOClients {
+  public get serpro(): Serpro {
+    return this.getOrSet('serpro', Serpro)
+  }
+}

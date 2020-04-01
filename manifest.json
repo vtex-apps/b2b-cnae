@@ -17,6 +17,13 @@
     },
     {
       "name": "update-app-settings"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "apigateway.serpro.gov.br",
+        "path": "*"
+      }
     }
   ],
   "builders": {

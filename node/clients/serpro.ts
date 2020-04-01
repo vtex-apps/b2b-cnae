@@ -1,0 +1,19 @@
+import { ExternalClient, InstanceOptions, IOContext } from '@vtex/api'
+
+export class Serpro extends ExternalClient {
+  constructor(context: IOContext, options?: InstanceOptions) {
+    super('http://apigateway.serpro.gov.br/', context, options)
+  }
+
+  public getToken = (appKey: string, appToken: string) =>
+    this.http.post('token', `grant_type=client_credentials`, {
+      headers: {
+        'Proxy-Authorization': this.context.authToken,
+        'X-Vtex-Use-Https': true,
+        Authorization: `Basic ${Buffer.from(`${appKey}:${appToken}`).toString(
+          'base64'
+        )}`,
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+    })
+}

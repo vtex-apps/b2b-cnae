@@ -1456,13 +1456,9 @@ uuid@^3.1.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-"vtex.b2b-cnae@https://everton--c2v01.myvtex.com/_v/private/typings/linked/v1/vtex.b2b-cnae@0.0.1+build1585188458/public/@types/vtex.b2b-cnae":
-  version "0.0.1"
-  resolved "https://everton--c2v01.myvtex.com/_v/private/typings/linked/v1/vtex.b2b-cnae@0.0.1+build1585188458/public/@types/vtex.b2b-cnae#28db15d1c463e7d776623c66181667acfc22dea7"
-
-"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.26/public/@types/vtex.styleguide":
-  version "9.112.26"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.26/public/@types/vtex.styleguide#89a1e5de4cca1e923590840b5229917719291b15"
+"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.27/public/@types/vtex.styleguide":
+  version "9.112.27"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.27/public/@types/vtex.styleguide#30fa53650c1bb08e25d2252d7c3af4285daccd95"
 
 wrappy@1:
   version "1.0.2"

@@ -1,7 +1,7 @@
 type Query {
   getSettings: SettingsResponse @cacheControl(scope: PUBLIC, maxAge: MEDIUM)
   getConfig: GetConfigResponse @cacheControl(scope: PUBLIC, maxAge: MEDIUM)
-  postSettings(settings: Settings): Boolean
+  postSettings(settings: Settings): SaveResult
 }
 
 input Settings {
@@ -18,6 +18,10 @@ type SettingsResponse {
   isMandatoryForCompany: Boolean
   startOfAcceptedRange: String
   tradePolicyId: String
+}
+
+type SaveResult {
+  status: Boolean
 }
 
 type GetConfigResponse {
