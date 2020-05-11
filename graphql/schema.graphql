@@ -2,6 +2,7 @@ type Query {
   getSettings: SettingsResponse @cacheControl(scope: PUBLIC, maxAge: MEDIUM)
   getConfig: GetConfigResponse @cacheControl(scope: PUBLIC, maxAge: MEDIUM)
   postSettings(settings: Settings): SaveResult
+  validateCnpj(cnpj:String): ConsumerInformation
 }
 
 input Settings {
@@ -10,6 +11,7 @@ input Settings {
   isMandatoryForCompany: Boolean
   startOfAcceptedRange: String
   tradePolicyId: String
+  token: String
 }
 
 type SettingsResponse {
@@ -18,6 +20,7 @@ type SettingsResponse {
   isMandatoryForCompany: Boolean
   startOfAcceptedRange: String
   tradePolicyId: String
+  token: String
 }
 
 type SaveResult {
@@ -27,4 +30,15 @@ type SaveResult {
 type GetConfigResponse {
   storeKey: String
   apiUser: String
+}
+
+type ConsumerInformation{
+  allowed: Boolean,
+  tradePolicyId: String  
+  acceptedCnae: Cnae
+}
+
+type Cnae{
+  code: String,
+  description: String,
 }

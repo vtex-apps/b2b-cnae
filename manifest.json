@@ -61,6 +61,11 @@
         "type": "string",
         "title": "Trade policy id",
         "description": "Id of the trade policy to be aplied to the customers"
+      },
+      "token": {
+        "type": "string",
+        "title": "SERPRO Authenticated token",
+        "description": "Token of Authentication after service return"
       }
     }
   },

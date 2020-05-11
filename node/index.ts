@@ -2,6 +2,8 @@ import { ClientsConfig, LRUCache, Service, ServiceContext } from '@vtex/api'
 
 import { Clients } from './clients'
 import { queries } from './resolvers/cnae'
+import { method } from '@vtex/api'
+import { validate } from './middlewares/validate'
 
 const TIMEOUT_MS = 5000
 
@@ -35,4 +37,9 @@ export default new Service<Clients>({
       },
     },
   },
+  routes: {
+    validateCnpj: method({
+      GET: validate
+    })
+  }
 })

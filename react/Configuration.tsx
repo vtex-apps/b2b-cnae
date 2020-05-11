@@ -20,6 +20,7 @@ import './styles.global.css'
 
 const Configuration: FC = () => {
   const { data } = useQuery(getSettings)
+  console.log(data);
   const client = useApolloClient()
   const [settings, setSettings] = useState<Settings>({
     login: '',

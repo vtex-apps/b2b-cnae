@@ -16,4 +16,14 @@ export class Serpro extends ExternalClient {
         'content-type': 'application/x-www-form-urlencoded',
       },
     })
+
+  public getCnae = (bearerToken: string, cnpj: string) =>
+    this.http.get(`consulta-cnpj/v1/cnpj/${cnpj}`, {
+      headers: {
+        'Proxy-Authorization': this.context.authToken,
+        'X-Vtex-Use-Https': true,
+        Authorization: `Bearer ${bearerToken}`,
+        'content-type': 'application/json',
+      },
+    })
 }
