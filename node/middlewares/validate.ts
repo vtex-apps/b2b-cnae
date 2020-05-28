@@ -22,6 +22,7 @@ export async function validate(ctx: Context, next: () => Promise<any>) {
         let settings = await apps.getAppSettings(appId)
         let response: any = null
         try {
+            ctx.set('Access-Control-Allow-Origin', '*');
             ctx.status = 200
             response = await serpro.getCnae(await GetOrGenerateToken(settings.login, settings.password, ctx), cnpj?.toString())
             const { cnae_principal, cnae_secundarias } = response

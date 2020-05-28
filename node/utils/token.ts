@@ -7,8 +7,9 @@ export async function GetOrGenerateToken(login: string, password: string, ctx: C
 
     try {
         response = await serpro.getToken(login, password)
-        if (response.access_token)
+        if (response.access_token) {
             return response.access_token
+        }
         else
             return ''
     } catch (error) {

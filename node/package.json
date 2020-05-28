@@ -1,7 +1,5 @@
 {
-  "dependencies": {
-    "@vtex/api": "^3.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "8.x",
     "@vtex/api": "^3.0.0",

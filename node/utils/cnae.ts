@@ -14,7 +14,7 @@ export function ValidateCnae(mainCnae: CnaeInput, secondarieCnaes: CnaeInput[], 
         cnae.code = firstValidCnae ? firstValidCnae.codigo : ''
         cnae.description = firstValidCnae ? firstValidCnae.descricao : ''
         acceptedCnae.tradePolicyId = tradePolicyId
-        acceptedCnae.allowed = true;
+        acceptedCnae.allowed = firstValidCnae ? true : false;
     }
 
     return acceptedCnae

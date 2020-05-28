@@ -6,7 +6,7 @@
   "maxReplicas": 4,
   "routes": {
     "validateCnpj": {
-      "path": "/v1/status/:cnpj",
+      "path": "/v1/validateCnae/:cnpj",
       "public": true
     }
   }

@@ -7,8 +7,8 @@ import { validate } from './middlewares/validate'
 
 const TIMEOUT_MS = 5000
 
-const memoryCache = new LRUCache<string, any>({ max: 5000 })
-metrics.trackCache('status', memoryCache)
+const memoryCache = new LRUCache<string, any>({ max: 100 })
+metrics.trackCache('validateCnae', memoryCache)
 
 const clients: ClientsConfig<Clients> = {
   implementation: Clients,
@@ -17,7 +17,7 @@ const clients: ClientsConfig<Clients> = {
       retries: 2,
       timeout: TIMEOUT_MS,
     },
-    status: {
+    validateCnae: {
       memoryCache,
     },
   },
