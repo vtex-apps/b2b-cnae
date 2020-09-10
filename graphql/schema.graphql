@@ -2,7 +2,8 @@ type Query {
   getSettings: SettingsResponse @cacheControl(scope: PUBLIC, maxAge: MEDIUM)
   getConfig: GetConfigResponse @cacheControl(scope: PUBLIC, maxAge: MEDIUM)
   postSettings(settings: Settings): SaveResult
-  validateCnpj(cnpj:String): ConsumerInformation
+  validateCnpj(cnpj: String): ConsumerInformation
+  getCompanyInformation(cnpj: String): CompanyInformation
 }
 
 input Settings {
@@ -32,13 +33,60 @@ type GetConfigResponse {
   apiUser: String
 }
 
-type ConsumerInformation{
-  allowed: Boolean,
-  tradePolicyId: String  
+type ConsumerInformation {
+  allowed: Boolean
+  tradePolicyId: String
   acceptedCnae: Cnae
 }
 
-type Cnae{
-  code: String,
-  description: String,
+type Cnae {
+  code: String
+  description: String
+}
+
+type LegalNature {
+  code: String
+  description: String
+}
+
+type Address {
+  street: String
+  number: String
+  complement: String
+  cep: String
+  district: String
+  city: String
+  state: String
+}
+
+type CadastralSituation {
+  code: String
+  date: String
+  motive: String
+}
+
+type PhoneNumber {
+  ddd: String
+  number: String
+}
+
+type CompanyInformation {
+  ni: String
+  oppeningDate: String
+  companyName: String
+  tradeName: String
+  mainCnae: Cnae
+  legalNature: LegalNature
+  address: Address
+  specialSituation: String
+  cadastralSituation: CadastralSituation
+  agency: String
+  establishmentType: String
+  email: String
+  socialCapital: String
+  size: String
+  phoneNumbers: [PhoneNumber]
+  secondarieCnaes: [Cnae]
+  agencyName: String
+  federativeEntity: String
 }

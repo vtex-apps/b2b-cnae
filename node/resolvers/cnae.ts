@@ -1,6 +1,7 @@
 import { Apps } from '@vtex/api'
 import { GetOrGenerateToken } from '../utils/token'
 import { ValidateCnae } from '../utils/cnae'
+import { FormatInformation } from '../utils/companyInformation'
 
 declare let process: {
   env: {
@@ -61,5 +62,23 @@ export const queries = {
       console.log('Error on validate CNPJ', error)
       return null
     }
-  }
+  },
+  getCompanyInformation: async(_:any, args:any, ctx:Context) =>{
+    const { cnpj } = args
+    const {
+      clients: { serpro, apps },
+    } = ctx
+    const appId = process.env.VTEX_APP_ID
+    let settings = await apps.getAppSettings(appId)
+    let response: any = null
+    try {
+      response = await serpro.getCnae(await GetOrGenerateToken(settings.login, settings.password, ctx), cnpj)
+      console.log(response)
+      return FormatInformation(response); 
+    }
+    catch (error) {
+      console.log('Error on validate CNPJ', error)
+      return null
+    }
+  } 
 }
