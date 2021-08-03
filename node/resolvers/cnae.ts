@@ -73,7 +73,6 @@ export const queries = {
     let response: any = null
     try {
       response = await serpro.getCnae(await GetOrGenerateToken(settings.login, settings.password, ctx), cnpj)
-      console.log(response)
       return FormatInformation(response); 
     }
     catch (error) {

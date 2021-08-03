@@ -3,7 +3,7 @@
   "devDependencies": {
     "@types/node": "8.x",
     "@vtex/api": "^3.0.0",
-    "typescript": "3.8.3",
+    "typescript": "3.9.7",
     "vtex.styleguide": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.112.27/public/@types/vtex.styleguide"
   }
 }

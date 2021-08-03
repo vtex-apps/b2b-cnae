@@ -2,50 +2,47 @@ import {CnaeOutput} from './cnae'
 
 export function FormatInformation(response:any)
 {
-    var mainCnae: CnaeOutput  = {code: response.cnae_principal.codigo, description: response.cnae_principal.descricao}
-    var legalNature: LegalNature = {code: response.natureza_juridica.codigo, description: response.natureza_juridica.descricao}
+    var mainCnae: CnaeOutput  = {code: response.cnaePrincipal.codigo, description: response.cnaePrincipal.descricao}
+    var legalNature: LegalNature = {code: response.naturezaJuridica.codigo, description: response.naturezaJuridica.descricao}
     var address: Address = {
                             street: response.endereco.logradouro,
                             number: response.endereco.numero,
                             complement: response.endereco.complemento,
                             cep: response.endereco.cep,
                             district: response.endereco.bairro,
-                            city: response.endereco.municipio,
+                            city: response.endereco.municipio.descricao,
                             state: response.endereco.uf
                             }
     var cadastralSituation: CadastralSituation = {
-                                                    code: response.situacao_cadastral.codigo,
-                                                    date: response.situacao_cadastral.data,
-                                                    motive: response.situacao_cadastral.motivo
+                                                    code: response.situacaoCadastral.codigo,
+                                                    date: response.situacaoCadastral.data,
+                                                    motive: response.situacaoCadastral.motivo
                                                 }
 
     var phoneNumbers: PhoneNumber[] = [{ddd: response.telefones[0].ddd, number: response.telefones[0].numero}]
 
     var secondarieCnaes: CnaeOutput[] = []
     
-    response.cnae_secundarias.forEach((secondarieCnae:any) => {
+    response.cnaeSecundarias.forEach((secondarieCnae:any) => {
         let currentCnae: CnaeOutput = {code: secondarieCnae.codigo, description: secondarieCnae.descricao}
-        secondarieCnaes.push(currentCnae)    
+        secondarieCnaes.push(currentCnae)       
     });
 
     var information: CompanyInformation = {
                                             ni: response.ni, 
-                                            oppeningDate: response.data_abertura, 
-                                            companyName: response.nome_empresarial, 
-                                            tradeName: response.nome_fantasia, 
+                                            oppeningDate: response.dataAbertura, 
+                                            companyName: response.nomeEmpresarial, 
+                                            tradeName: response.nomeFantasia, 
                                             mainCnae, 
                                             legalNature,
                                             address,
-                                            specialSituation: response.situacao_especial,
+                                            specialSituation: response.situacaoEspecial,
                                             cadastralSituation,
-                                            agency: response.orgao,
-                                            establishmentType: response.tipo_estabelecimento,
-                                            email: response.correio_eletronico,
-                                            socialCapital: response.capital_social,
+                                            establishmentType: response.tipoEstabelecimento,
+                                            email: response.correioEletronico,
+                                            socialCapital: response.capitalSocial,
                                             size: response.porte,
                                             phoneNumbers,
-                                            agencyName: response.nome_orgao,
-                                            federativeEntity: response.ente_federativo,
                                             secondarieCnaes
                                         }
     
@@ -65,15 +62,12 @@ export interface CompanyInformation{
     address: Address
     specialSituation: string
     cadastralSituation: CadastralSituation
-    agency: string    
     establishmentType: string
     email: string
     socialCapital: string
     size: string
     phoneNumbers: PhoneNumber[]
     secondarieCnaes: CnaeOutput[]
-    agencyName: String
-    federativeEntity: String
 }
 
 interface LegalNature {

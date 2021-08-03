@@ -12,17 +12,37 @@ vtex install vtex.b2b-adapter@0.x
 
 3. Once configured, the api can be accessed via Graphql with an query like the following
 ```
-validateCnpj(cnpj:$cnpj){
+query ValidateCNPJ($cnpj: String){
+  validateCnpj(cnpj:$cnpj){
     allowed
     tradePolicyId
     acceptedCnae{
       code
       description      
     }
-}
+	} 
+} 
 ```
 
-4. The information can also be accessed via http request in the following url
+Via graphql is also possible to obtain more data about the company, once you get the cnpj, with a request like this: 
+
+```
+query getCompanyInformation($cnpj: String){
+  getCompanyInformation(cnpj:$cnpj) {
+    ni
+    oppeningDate
+    companyName
+    tradeName
+    specialSituation
+    establishmentType
+    email
+    socialCapital
+    size
+  }
+} 
+```
+
+4. The CNAE information can also be accessed via http request in the following url
 ```
 https://{{acountName}}.{{environment}}.com/v1/validateCnae/{{cnpj}}
 ```
