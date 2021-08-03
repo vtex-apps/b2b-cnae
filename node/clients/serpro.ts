@@ -18,7 +18,7 @@ export class Serpro extends ExternalClient {
     })
 
   public getCnae = (bearerToken: string, cnpj: string) =>
-    this.http.get(`consulta-cnpj/v1/cnpj/${cnpj}`, {
+    this.http.get(`consulta-cnpj-df/v2/empresa/${cnpj}`, {
       headers: {
         'Proxy-Authorization': this.context.authToken,
         'X-Vtex-Use-Https': true,

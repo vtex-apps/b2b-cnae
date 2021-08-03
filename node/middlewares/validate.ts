@@ -25,8 +25,9 @@ export async function validate(ctx: Context, next: () => Promise<any>) {
             ctx.set('Access-Control-Allow-Origin', '*');
             ctx.status = 200
             response = await serpro.getCnae(await GetOrGenerateToken(settings.login, settings.password, ctx), cnpj?.toString())
-            const { cnae_principal, cnae_secundarias } = response
-            ctx.body = ValidateCnae(cnae_principal, cnae_secundarias, parseInt(settings.startOfAcceptedRange), settings.tradePolicyId)
+            const { cnaePrincipal, cnaeSecundarias } = response
+            console.log('Principal', cnaePrincipal)
+            ctx.body = ValidateCnae(cnaePrincipal, cnaeSecundarias, parseInt(settings.startOfAcceptedRange), settings.tradePolicyId)
         }
         catch (error) {
             ctx.status = 500

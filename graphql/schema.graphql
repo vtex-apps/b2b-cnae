@@ -80,13 +80,10 @@ type CompanyInformation {
   address: Address
   specialSituation: String
   cadastralSituation: CadastralSituation
-  agency: String
   establishmentType: String
   email: String
   socialCapital: String
   size: String
   phoneNumbers: [PhoneNumber]
   secondarieCnaes: [Cnae]
-  agencyName: String
-  federativeEntity: String
-}
+ }
