@@ -2,7 +2,7 @@ import { ExternalClient, InstanceOptions, IOContext } from '@vtex/api'
 
 export class Serpro extends ExternalClient {
   constructor(context: IOContext, options?: InstanceOptions) {
-    super('http://apigateway.serpro.gov.br/', context, options)
+    super('http://gateway.apiserpro.serpro.gov.br/', context, options)
   }
 
   public getToken = (appKey: string, appToken: string) =>

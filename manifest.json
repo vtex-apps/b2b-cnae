@@ -21,7 +21,7 @@
     {
       "name": "outbound-access",
       "attrs": {
-        "host": "apigateway.serpro.gov.br",
+        "host": "gateway.apiserpro.serpro.gov.br",
         "path": "*"
       }
     }
