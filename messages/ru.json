@@ -1,0 +1,12 @@
+{
+  "admin/b2b-cnae.layout.title": "CNAE app validation",
+  "admin/b2b-cnae.layout.configuration-title": "In order to use the automatic CNAE validation, you need to inform your account login and password on the SERPRO services",
+  "admin/b2b-cnae.layout.configuration-submit": "Save",
+  "admin/b2b-cnae.layout.configuration-login": "SERPRO AppKey",
+  "admin/b2b-cnae.layout.configuration-password": "SERPRO AppToken",
+  "admin/b2b-cnae.layout.configuration-isMandatory": "Mandatory for all companies",
+  "admin/b2b-cnae.layout.configuration-beginRange": "Start of accepted CNAE range",
+  "admin/b2b-cnae.layout.configuration-tradePolicy": "Id of the trade policy that will be applied to the buyer",
+  "admin/b2b-cnae.layout.configuration-success": "Save successfully",
+  "admin/b2b-cnae.layout.configuration-failure": "Failure to send, AppKey or AppToken is invalid"
+}
